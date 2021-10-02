@@ -1,8 +1,11 @@
 const bodyParser = require('body-parser');
-const { restart } = require('nodemon');
+const pessoas = require('./pessoasRoute');
 
 module.exports = app => {
   app.use(bodyParser.json());
-
-  app.get('/', (req, res) => res.send('Olá!'));
+  // Está usando as rotas de pessoa
+  app.use(pessoas);
+  
+  // Apenas para teste
+  //app.get('/', (req, res) => res.send('Olá!'));
 }

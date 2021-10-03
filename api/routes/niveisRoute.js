@@ -5,11 +5,19 @@ const NivelController = require('../controllers/NivelController');
 const router = Router();
 
 router
+  //GETS
   .get('/niveis', NivelController.pegaTodosOsNiveis)
   .get('/niveis/:id', NivelController.pegaUmNivel)
+
+  //POSTS 
   .post('/niveis', NivelController.criarNivel)
-  .put('/niveis/:id', NivelController.atualizarNivel)
-  .delete('/niveis/:id', NivelController.deletarNivel)
   .post('/niveis/:id/restaura', NivelController.restauraNivel)
+
+  //PUTS 
+  .put('/niveis/:id', NivelController.atualizarNivel)
+
+  //DELETES  
+  .delete('/niveis/:id', NivelController.deletarNivel)
+  
 
 module.exports = router;
